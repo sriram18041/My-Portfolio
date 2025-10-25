@@ -1785,7 +1785,7 @@ input, select, textarea {
 	}
 
 	header.major h2 {
-		color: #007FFF;
+		color: #4acaa8;
 		font-size: 3.5em;
 	}
 
@@ -1826,7 +1826,7 @@ input, select, textarea {
 		appearance: none;
 		border-radius: 5px;
 		border: none;
-		border: solid 2px #228B22;
+		border: solid 2px #e4e4e4;
 		color: inherit;
 		display: block;
 		outline: 0;
@@ -1834,10 +1834,6 @@ input, select, textarea {
 		text-decoration: none;
 		width: 100%;
 	}
-
-.glowing-box:active {
-    box-shadow: 0 0 15px 5px #00A7E1; /* Green glow */
-}
 
 		input[type="text"]:invalid,
 		input[type="password"]:invalid,
@@ -1852,7 +1848,7 @@ input, select, textarea {
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #ff0000;
+			border-color: #4acaa8;
 		}
 
 	select {
@@ -2204,7 +2200,7 @@ input, select, textarea {
 
 		.image.main {
 			display: block;
-			height: 19em;
+			height: 20em;
 			border-radius: 0;
 		}
 
@@ -2522,7 +2518,7 @@ input, select, textarea {
 		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		background-color: #777;
+		background-color: #989898;
 		border-radius: 5px;
 		border: 0;
 		color: #ffffff !important;
@@ -2622,7 +2618,7 @@ input, select, textarea {
 		input[type="reset"].primary,
 		input[type="button"].primary,
 		.button.primary {
-			background-color: #32CD32;
+			background-color: #4acaa8;
 			color: #ffffff !important;
 		}
 
@@ -2630,7 +2626,7 @@ input, select, textarea {
 			input[type="reset"].primary:hover,
 			input[type="button"].primary:hover,
 			.button.primary:hover {
-				background-color: #218838;
+				background-color: #5ed0b1;
 			}
 
 			input[type="submit"].primary:active,
@@ -2704,7 +2700,7 @@ input, select, textarea {
 		-webkit-justify-content: space-between;
 		-ms-justify-content: space-between;
 		justify-content: space-between;
-		background: #00A7E1;
+		background: #4acaa8;
 		color: #d2f2e9;
 		height: 100%;
 		overflow-y: auto;
