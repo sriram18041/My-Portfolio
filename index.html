@@ -509,55 +509,9 @@
     			});
 			</script>
 
-			<script>
-/* --------------------------------------------------------------
-   SMOOTH SCROLL + ACTIVE NAV HIGHLIGHT (works on desktop & mobile)
-   -------------------------------------------------------------- */
-$(function () {
-    // ---- 1. Click handler ------------------------------------------------
-    $('#nav a').on('click', function (e) {
-        var href = $(this).attr('href');
-
-        if (href && href.charAt(0) === '#') {          // internal link
-            e.preventDefault();                        // stop jump
-
-            // ---- update active class
-            $('#nav a').removeClass('active');
-            $(this).addClass('active');
-
-            // ---- smooth scroll (120px offset for fixed header)
-            $('html, body').animate({
-                scrollTop: $(href).offset().top - 120
-            }, 600);
-        }
-    });
-
-    // ---- 2. Scroll spy (highlight current section) ----------------------
-    var $sections = $('#main > section');          // <-- fixed: closing )
-
-    $(window).on('scroll', function () {
-        var scroll = $(window).scrollTop() + 140; // a little buffer
-
-        $sections.each(function () {
-            var $sec = $(this),
-                top  = $sec.offset().top,
-                bot  = top + $sec.outerHeight(),
-                id   = $sec.attr('id');
-
-            if (scroll >= top && scroll < bot) {
-                $('#nav a').removeClass('active');
-                $('#nav a[href="#' + id + '"]').addClass('active');
-                return false;                       // stop looping
-            }
-        });
-    });
-
-    // ---- 3. Set correct active state on page load -----------------------
-    $(window).trigger('scroll');
-});
-</script>
 	</body>
 </html>
+
 
 
 
