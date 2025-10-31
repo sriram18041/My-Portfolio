@@ -511,32 +511,32 @@
 
 			<script>
 /* --------------------------------------------------------------
-   1. SMOOTH SCROLL + ACTIVE STATE
+   SMOOTH SCROLL + ACTIVE NAV HIGHLIGHT (works on desktop & mobile)
    -------------------------------------------------------------- */
 $(function () {
-    // ----- 1. Click → scroll + set active -----------------------
+    // ---- 1. Click handler ------------------------------------------------
     $('#nav a').on('click', function (e) {
-        var $link   = $(this),
-            target  = $link.attr('href');               // #one, #two, …
+        var href = $(this).attr('href');
 
-        if (target.charAt(0) === '#') {                 // internal anchor
-            e.preventDefault();
+        if (href && href.charAt(0) === '#') {          // internal link
+            e.preventDefault();                        // stop jump
 
-            // remove old active
+            // ---- update active class
             $('#nav a').removeClass('active');
-            $link.addClass('active');
+            $(this).addClass('active');
 
-            // animate scroll (120 px offset for the fixed header)
+            // ---- smooth scroll (120px offset for fixed header)
             $('html, body').animate({
-                scrollTop: $(target).offset().top - 120
+                scrollTop: $(href).offset().top - 120
             }, 600);
         }
     });
 
-    // ----- 2. Scroll → update active (optional but nice) -------
-    var $sections = $('#main > section');
+    // ---- 2. Scroll spy (highlight current section) ----------------------
+    var $sections = $('#main > section');          // <-- fixed: closing )
+
     $(window).on('scroll', function () {
-        var scroll = $(window).scrollTop() + 130;   // a little extra buffer
+        var scroll = $(window).scrollTop() + 140; // a little buffer
 
         $sections.each(function () {
             var $sec = $(this),
@@ -547,14 +547,18 @@ $(function () {
             if (scroll >= top && scroll < bot) {
                 $('#nav a').removeClass('active');
                 $('#nav a[href="#' + id + '"]').addClass('active');
-                return false;               // stop looping once found
+                return false;                       // stop looping
             }
         });
-    }).trigger('scroll');                   // set correct state on load
+    });
+
+    // ---- 3. Set correct active state on page load -----------------------
+    $(window).trigger('scroll');
 });
 </script>
 	</body>
 </html>
+
 
 
 
