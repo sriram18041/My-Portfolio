@@ -113,14 +113,14 @@
 				</header>
 				<nav id="nav">
 					<ul>
-						<li><a href="#one" class="active scrolly"><i class="fas fa-user"></i> About</a></li>
-						<li><a href="#two" class="scrolly"><i class="fas fa-cogs"></i> What I Excel In</a></li>
-						<li><a href="#three" class="scrolly"><i class="fas fa-graduation-cap"></i> My Education</a></li>
-						<li><a href="#four" class="scrolly"><i class="fas fa-briefcase"></i> My Experience</a></li>
-						<li><a href="#five" class="scrolly"><i class="fas fa-certificate"></i> My Certifications</a></li>
-						<li><a href="#six" class="scrolly"><i class="fas fa-code"></i> My Projects</a></li>
-						<li><a href="#seven" class="scrolly"><i class="fas fa-trophy"></i> Leadership & Accomplishments</a></li>
-						<li><a href="#eight" class="scrolly"><i class="fas fa-envelope"></i> Contact</a></li>
+						<li><a href="#one"><i class="fas fa-user"></i> About</a></li>
+						<li><a href="#two"><i class="fas fa-cogs"></i> What I Excel In</a></li>
+						<li><a href="#three"><i class="fas fa-graduation-cap"></i> My Education</a></li>
+						<li><a href="#four"><i class="fas fa-briefcase"></i> My Experience</a></li>
+						<li><a href="#five"><i class="fas fa-certificate"></i> My Certifications</a></li>
+						<li><a href="#six"><i class="fas fa-code"></i> My Projects</a></li>
+						<li><a href="#seven"><i class="fas fa-trophy"></i> Leadership & Accomplishments</a></li>
+						<li><a href="#eight"><i class="fas fa-envelope"></i> Contact</a></li>
 					</ul>
 				</nav>
 				<footer>
@@ -148,7 +148,7 @@
         							<div class="row">
             							<div class="col-8 col-12-small">
                 							<header class="major">
-                    							<h2>Hi there!</h2>
+                    							<h2>Hello!</h2>
                     							<p>I am Sriram. Thanks for visiting my portfolio!<br />
                 							</header>
                 							<p>I am passionate about solving complex business challenges by implementing robust analytical frameworks and translating data into a clear narrative for strategic action. My approach is built on a foundation of technical problem-solving, which I apply to drive operational efficiency and inform leadership decisions. Looking forward to contributing these skills to forward-thinking business initiatives.</p>
@@ -509,48 +509,9 @@
     			});
 			</script>
 
-			<!-- ==== FALLBACK SMOOTH SCROLL (works even if main.js fails) ==== -->
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    // Grab every link that points to an #id
-    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-        anchor.addEventListener('click', function (e) {
-            var targetId = this.getAttribute('href');
-            if (targetId === '#') return;               // ignore empty #
-            var target = document.querySelector(targetId);
-            if (!target) return;                        // target not found
-
-            e.preventDefault();
-
-            // ---- 1. Use the template’s scrolly (if it exists) ----
-            if (typeof $.fn.scrolly === 'function') {
-                $(anchor).scrolly(800, 'easeInOutCubic'); // 800 ms
-                return;
-            }
-
-            // ---- 2. Pure-JS fallback (no jQuery needed) ----
-            var start = window.pageYOffset;
-            var distance = target.getBoundingClientRect().top;
-            var duration = 800;                         // ms
-            var easing = function (t) { return t<.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1; };
-            var startTime = performance.now();
-
-            function step(now) {
-                var elapsed = now - startTime;
-                var progress = Math.min(elapsed / duration, 1);
-                var ease = easing(progress);
-                window.scrollTo(0, start + distance * ease);
-
-                if (progress < 1) requestAnimationFrame(step);
-            }
-            requestAnimationFrame(step);
-        });
-    });
-});
-</script>
-
 	</body>
 </html>
+
 
 
 
