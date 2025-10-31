@@ -3318,3 +3318,38 @@ input, select, textarea {
 			}
 
 	}
+/* Professional Offers Section */
+.offers-section {
+    margin-bottom: 2.25em;
+}
+
+.offer-item {
+    background: #fafafa;
+    border-radius: 5px;
+    border: solid 2px #e4e4e4;
+    margin-bottom: 1.5em;
+    padding: 1.5em;
+    transition: border-color 0.2s ease-in-out;
+}
+
+.offer-item:hover {
+    border-color: #4acaa8;
+}
+
+.offer-company {
+    color: #007FFF;
+    font-weight: 700;
+    font-size: 1.25em;
+    margin-bottom: 0.5em;
+}
+
+.offer-details {
+    list-style: none;
+    padding-left: 0;
+    margin: 0.75em 0;
+}
+
+.offer-details li {
+    margin-bottom: 0.25em;
+    padding-left: 0;
+}
