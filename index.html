@@ -510,8 +510,11 @@
 			</script>
 
 			<script>
-
+/* --------------------------------------------------------------
+   1. SMOOTH SCROLL + ACTIVE STATE
+   -------------------------------------------------------------- */
 $(function () {
+    // ----- 1. Click → scroll + set active -----------------------
     $('#nav a').on('click', function (e) {
         var $link   = $(this),
             target  = $link.attr('href');               // #one, #two, …
@@ -519,15 +522,18 @@ $(function () {
         if (target.charAt(0) === '#') {                 // internal anchor
             e.preventDefault();
 
+            // remove old active
             $('#nav a').removeClass('active');
             $link.addClass('active');
 
+            // animate scroll (120 px offset for the fixed header)
             $('html, body').animate({
                 scrollTop: $(target).offset().top - 120
             }, 600);
         }
     });
 
+    // ----- 2. Scroll → update active (optional but nice) -------
     var $sections = $('#main > section');
     $(window).on('scroll', function () {
         var scroll = $(window).scrollTop() + 130;   // a little extra buffer
@@ -549,6 +555,7 @@ $(function () {
 </script>
 	</body>
 </html>
+
 
 
 
