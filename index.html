@@ -508,8 +508,48 @@
         			}
     			});
 			</script>
+
+			<script>
+
+$(function () {
+    $('#nav a').on('click', function (e) {
+        var $link   = $(this),
+            target  = $link.attr('href');               // #one, #two, …
+
+        if (target.charAt(0) === '#') {                 // internal anchor
+            e.preventDefault();
+
+            $('#nav a').removeClass('active');
+            $link.addClass('active');
+
+            $('html, body').animate({
+                scrollTop: $(target).offset().top - 120
+            }, 600);
+        }
+    });
+
+    var $sections = $('#main > section');
+    $(window).on('scroll', function () {
+        var scroll = $(window).scrollTop() + 130;   // a little extra buffer
+
+        $sections.each(function () {
+            var $sec = $(this),
+                top  = $sec.offset().top,
+                bot  = top + $sec.outerHeight(),
+                id   = $sec.attr('id');
+
+            if (scroll >= top && scroll < bot) {
+                $('#nav a').removeClass('active');
+                $('#nav a[href="#' + id + '"]').addClass('active');
+                return false;               // stop looping once found
+            }
+        });
+    }).trigger('scroll');                   // set correct state on load
+});
+</script>
 	</body>
 </html>
+
 
 
 
