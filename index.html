@@ -509,8 +509,49 @@
     			});
 			</script>
 
+			<!-- ==== FALLBACK SMOOTH SCROLL (works even if main.js fails) ==== -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Grab every link that points to an #id
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+            var targetId = this.getAttribute('href');
+            if (targetId === '#') return;               // ignore empty #
+            var target = document.querySelector(targetId);
+            if (!target) return;                        // target not found
+
+            e.preventDefault();
+
+            // ---- 1. Use the template’s scrolly (if it exists) ----
+            if (typeof $.fn.scrolly === 'function') {
+                $(anchor).scrolly(800, 'easeInOutCubic'); // 800 ms
+                return;
+            }
+
+            // ---- 2. Pure-JS fallback (no jQuery needed) ----
+            var start = window.pageYOffset;
+            var distance = target.getBoundingClientRect().top;
+            var duration = 800;                         // ms
+            var easing = function (t) { return t<.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1; };
+            var startTime = performance.now();
+
+            function step(now) {
+                var elapsed = now - startTime;
+                var progress = Math.min(elapsed / duration, 1);
+                var ease = easing(progress);
+                window.scrollTo(0, start + distance * ease);
+
+                if (progress < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        });
+    });
+});
+</script>
+
 	</body>
 </html>
+
 
 
 
