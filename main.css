@@ -4,7 +4,7 @@
    Type: Fraunces (display) + Inter (body) + IBM Plex Mono (data/labels)
    ============================================================ */
 
-/* ---------- Tokens ---------- */
+/* --------- Tokens --------- */
 :root{
   --paper: #FAFAF8;
   --paper-alt: #F1F3EF;
