@@ -4,9 +4,9 @@
   var root = document.documentElement;
   var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------------------------------------------------------
+  /* --------------------------------------------------------
      Scroll progress bar
-     --------------------------------------------------------- */
+     -------------------------------------------------------- */
   var progressBar = document.getElementById('scroll-progress');
   function updateProgress() {
     if (!progressBar) return;
